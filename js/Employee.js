@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     input.focus();
   }
 
-  // Add event listener for search input
   const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("input", searchCustomer);
   searchInput.addEventListener("keydown", (event) => {
@@ -60,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Add event listener for clear button
   const clearBtn = document.querySelector(".clear-btn");
   clearBtn.addEventListener("click", clearSearch);
 
@@ -134,4 +132,4 @@ document.addEventListener("DOMContentLoaded", () => {
     gmailInput.value = "";
   };
 
-});55
+});

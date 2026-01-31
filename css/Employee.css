@@ -196,7 +196,7 @@ span {
 .btn-close:hover{
   background-color: rgba(172, 171, 171, 0.411);
 }
-/* TABLE */
+
 h1 {
   margin-left: 35px;
 }
@@ -216,13 +216,11 @@ th {
   background: #e9e0e9;
 }
 
-/* EMPTY TEXT */
 .empty-text {
   margin-left: 35px;
   color: #777;
 }
 
-/* STATUS */
 .status {
   padding: 6px 14px;
   border-radius: 999px;
@@ -241,7 +239,6 @@ th {
 .status.ready   { background: #bbf7d0; color: #065f46; }
 .status.claimed { background: #e5e7eb; color: #374151; }
 
-/* STATUS */
 .status-legend {
   margin-left: 35px;
   margin-bottom: 8px;
@@ -255,7 +252,6 @@ th {
   margin-right: 6px;
 }
 
-/* ACTION BUTTONS */
 .btn-done {
   background: #2ea44f;
   color: white;
@@ -281,7 +277,6 @@ td:last-child {
   width: 150px;
 }
 
-/* DISABLED BUTTON */
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
