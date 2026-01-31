@@ -1,14 +1,14 @@
-const users = [
+let users = [
         { username: "jb", password: "1234" },
         { username: "anna", password: "abcd" },
         { username: "mike", password: "pass" }
         ];
 
 
-        const loginForm = document.getElementById("loginForm");
-const message = document.getElementById("message");
+  const loginForm = document.getElementById("loginForm");
+  const message = document.getElementById("message");
 
-loginForm.addEventListener("click", function(e) {
+  loginForm.addEventListener("click", function(e) {
   e.preventDefault();
 
   const enteredUsername = document.getElementById("username").value;

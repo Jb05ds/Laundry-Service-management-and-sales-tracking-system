@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("closeModal");
   const saveBtn = document.getElementById("saveBtn");
   const tableBody = document.querySelector("#customerTable tbody");
-  const statusLegend = document.getElementById("statusLegend");
 
   const nameInput = document.getElementById("name");
   const serviceInput = document.getElementById("service");
