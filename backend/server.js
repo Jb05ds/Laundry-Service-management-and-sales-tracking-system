@@ -28,7 +28,6 @@ app.get("/customers", (req, res) => {
     SELECT *
     FROM customers
     WHERE DATE(created_at) = CURDATE()
-      AND status != 'Completed'
     ORDER BY id DESC
   `;
 
@@ -40,6 +39,8 @@ app.get("/customers", (req, res) => {
     res.json(results);
   });
 });
+
+
 
 app.post("/addCustomer", (req, res) => {
   const { name, service, kilo, price, email } = req.body;

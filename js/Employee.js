@@ -80,10 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>₱ ${c.price}</td>
             <td>${c.email}</td>
             <td>
-              <select class="status-select">
-                <option value="Pending" ${c.status === "Pending" ? "selected" : ""}>Pending</option>
-                <option value="Ready to pick up" ${c.status === "Ready to pick up" ? "selected" : ""}>Ready to pick up</option>
-                <option value="Completed" ${c.status === "Completed" ? "selected" : ""}>Completed</option>
+              <select class="status-select status">
+                <option class="status pending" value="Pending" ${c.status === "Pending" ? "selected" : ""}>Pending</option>
+                <option class="status ready" value="Ready to pick up" ${c.status === "Ready to pick up" ? "selected" : ""}>Ready to pick up</option>
+                <option class="status claimed" value="Completed" ${c.status === "Completed" ? "selected" : ""}>Completed</option>
               </select>
             </td>
             <td>
