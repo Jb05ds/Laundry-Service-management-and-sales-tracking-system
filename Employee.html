@@ -8,58 +8,76 @@
 <body>
 
   <header class="title">
-    <h1 class="ShopName">Fresh'n Klean <span>— Employee</span></h1>
-    <button id="openModal" class="btn-add">+ Add Customer</button>
+    <h1>Fresh'n Klean <span>— Employee</span></h1>
+    <nav>
+      <ul>
+        <li><a href="#CustomerRecord" id="recordsLink">Records</a></li>
+        <li><a href="#monthlySales" id="salesLink">Monthly Sales</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section id="ModalOverlay">
-    <div class="modalBox form">
+    <article class="modalBox form">
       <h3>Add Customer</h3>
       <button id="closeModal" class="btn-close">×</button>
 
       <input type="text" id="name" placeholder="Name">
-      <input type="text" id="service" placeholder="Type of Service">
-      <input type="number" id="kilo" placeholder="Kilo">
-      <input type="number" id="price" placeholder="Price">
-      <input type="text" id="gmail" placeholder="Gmail / Number">
+      <select id="service" class="service">
+        <option value="">Select Service</option>
+        <option value="Wash & Dry">Wash & Dry</option>
+        <option value="Full Service">Full Service</option>
+      </select>
+      
+      <input type="text" inputmode="decimal" id="kilo" placeholder="Kilo">
+      <input type="text" inputmode="decimal" id="price" placeholder="Price">
+      <input type="text" inputmode="email" id="gmail" placeholder="Gmail / Number">
 
       <div class="btn-Modal">
         <button id="saveBtn" class="btn-save">Save</button>
       </div>
-    </div>
+    </article>
   </section>
 
-  <div class="adobo">
-    <div class="text">
-      <h1>Customer Records</h1>
-    </div> 
+  <main>
+    <div id="CustomerRecord">
+      <section class="txtSearch">
+        <div class="topBar">
+          <div class="searchBar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search customer name..."/>
+          </div>
 
-      <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input
-        type="text"
-        id="searchInput"
-        placeholder="Search customer name..."
-        />
-        <button class="clear-btn">✖</button>
+          <button id="openModal" class="btn-add">+ Add Customer</button>
+        </div>
+      </section>
+
+      <div class="table-container">
+        <table class="employeeBody" id="customerTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type of Service</th>
+              <th>Kilo</th> 
+              <th>Price</th>
+              <th>Gmail / Number</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
+    
+    <section id="monthlySales" class="salesGraph" style="display:none;">
+      <h2>Monthly Sales</h2>
+      <div id="salesChartContainer">
+        <canvas id="salesChart"></canvas>
+      </div>
+    </section>
 
-    <table class="employeeBody" id="customerTable">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type of Service</th>
-        <th>Kilo</th> 
-        <th>Price</th>
-        <th>Gmail / Number</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
+  <script src="js/chart.js"></script>
   <script src="js/Employee.js"></script>
 </body>
 </html>

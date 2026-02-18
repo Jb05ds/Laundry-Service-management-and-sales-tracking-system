@@ -1,45 +1,48 @@
 body {
   font-family: "Calluna", serif;
   margin: 0;
+  padding: 0;
   background-color: #f1ecfa;
 }
-
-.title {
-  background-color: #81428d;
-  color: white;
-  padding: 10px 35px;
+header{
   display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
   align-items: center;
-}
+  background-color: #81428d;
+  }
 
-.ShopName {
-  font-family: "Comic Sans MS", cursive;
+h1 {
+  margin-right: auto;
+  letter-spacing: 3px;
   font-size: 25px;
+  font-family: "Comic Sans MS", cursive;
+  color: white;
 }
-
-span {
+span{
   font-size: 18px;
 }
+header li{
+  list-style: none;
+  display: inline-block;
+  padding: 3px 10px;
 
-.btn-add {
-  margin-left: auto;
-  background: #43cacc;
+}
+
+header a{
+  text-decoration: none;
   color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
   font-weight: bold;
-  cursor: pointer;
+  letter-spacing: 1px;
   font-size: 15px;
+  padding: 8px 16px;
+  transition: all 0.3s ease
 }
-
-.btn-add:hover{
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
-}
-
-.btn-add:active{
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  transform: translateY(4px);
+header a:hover{
+  background: #43cacc;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 20px;
 }
 
 #ModalOverlay {
@@ -68,67 +71,60 @@ span {
 @keyframes bounceSoft {
   0% { transform: translateY(-20px) scale(0.95); opacity: 0; }
 }
-.adobo{
-  display: grid;
-  grid-template-columns: 500px 1fr;
-
+.txtSearch {
+  padding: 10px 20px;
 }
-.search-box {
-  position: relative;
-  width: 300px;
-  height: fit-content;
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchBar {
   display: flex;
   align-items: center;
-  margin-left: 600px;
-  margin-top: 20px;
-  background: white;
-  border-radius: 25px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: box-shadow 0.3s ease;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #ece5fa;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 250px;
 }
 
-.search-box:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  color: #999;
-  font-size: 16px;
-  z-index: 1;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 12px 40px 12px 40px;
-  border-radius: 25px;
+.searchBar input {
+  padding: 8px 10px;
+  font-size: 14px;
+  background-color: #ece5fa;
   border: none;
   outline: none;
-  font-size: 14px;
-  background: transparent;
+  width: 100%;
 }
 
-.search-box input:focus {
-  box-shadow: 0 0 0 2px #6c63ff inset;
+.searchBar input:focus {
+  border-color: #81428d;
+  box-shadow: 0 0 5px rgba(129, 66, 141, 0.3);
 }
 
-.clear-btn {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
+.btn-add {
+  background: #43cacc;
+  color: white;
   border: none;
-  font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
-  color: #999;
-  display: none;
-  transition: color 0.3s ease;
+  font-size: 15px;
 }
 
-.clear-btn:hover {
-  color: #333;
+.btn-add:hover {
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.btn-add:active {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  transform: translateY(4px);
 }
 
 .modalBox h3 {
@@ -156,6 +152,24 @@ span {
   box-shadow: 0 0 5px rgba(172, 172, 172, 0.5);
 }
 
+.modalBox select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  color: #6e6e6e;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Calluna", serif;}
+
+.modalBox select:focus {
+  outline: none;
+  border-color: #434443;
+  box-shadow: 0 0 5px rgba(172, 172, 172, 0.5);
+}
+
+
 .btn-Modal {
   display: flex;
   justify-content: center;
@@ -167,6 +181,7 @@ span {
   color: white;
   border: none;
   padding: 10px 50px;
+  border: none;
   border-radius: 6px;
   font-weight: bold;
   font-size: 15px;
@@ -202,10 +217,6 @@ span {
   background-color: rgba(172, 171, 171, 0.411);
 }
 
-h1 {
-  margin-left: 35px;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -219,7 +230,6 @@ th, td {
 
 th {
   background: #e9e0e9;
-   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .empty-text {
@@ -241,9 +251,7 @@ th {
 
 .status.pending { background: #fde68a; color: #92400e; }
 .status.ready   { background: #bbf7d0; color: #065f46; }
-.status.claimed { background: #e5e7eb; color: #374151; }
-
-
+.status.claimed { background: #a5d6a7; color: #1b4332; }
 
 .btn-done {
   background: #2ea44f;
@@ -281,3 +289,35 @@ select.status {
   -moz-appearance: none;
   border: none;
 } 
+
+.table-container {
+  max-height: calc(8 * 50px + 40px);
+  overflow-y: auto;
+  border: 1px solid #d6a0d3;
+  border-radius: 8px;
+}
+
+.table-container thead tr {
+  position: sticky;
+  top: 0;
+  background: #e9e0e9;
+  z-index: 1;
+}
+
+.salesGraph {
+  display: none;
+  padding: 20px;
+  margin-top: 50px;
+  background: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#salesChartContainer {
+  width: 100%;
+  height: 400px;
+}
