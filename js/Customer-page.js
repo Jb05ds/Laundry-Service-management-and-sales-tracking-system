@@ -24,7 +24,7 @@ closeBtn.addEventListener('click', () => {
   const tableBody = document.querySelector("#customerTable tbody");
 
   function loadQueue() {
-    fetch("http://localhost:3000/customers")
+    fetch("http://192.168.0.110:3000/customers")
       .then(res => res.json())
       .then(data => {
         tableBody.innerHTML = "";
@@ -62,7 +62,7 @@ closeBtn.addEventListener('click', () => {
   }
 
   loadQueue();
-  setInterval(loadQueue, 5000);
+  setInterval(loadQueue, 1000);
 
 });
 

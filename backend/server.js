@@ -9,9 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
+  host: "192.168.0.110",
+  user: "projectuser",
+  password: "jb123",
   database: "laundry_system"
 });
 

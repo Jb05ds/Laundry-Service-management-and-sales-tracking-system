@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    fetch("http://localhost:3000/addCustomer", {
+    fetch("http://192.168.0.110:3000/addCustomer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function loadCustomers() {
-    fetch("http://localhost:3000/customers")
+    fetch("http://192.168.0.110:3000/customers")
       .then(res => res.json())
       .then(data => {
         tableBody.innerHTML = "";
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
           row.querySelector(".btn-delete").onclick = () => {
             if (!confirm("Are you sure you want to delete this record?")) return;
 
-            fetch(`http://localhost:3000/deleteCustomer/${c.id}`, {
+            fetch(`http://192.168.0.110:3000/deleteCustomer/${c.id}`, {
               method: "DELETE"
             })
             .then(res => res.json())
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
     function updateStatus(id, status) {
-    fetch(`http://localhost:3000/updateStatus/${id}`, {
+    fetch(`http://192.168.0.110:3000/updateStatus/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status })
@@ -234,4 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadCustomers();
+  setInterval(() => {
+    loadCustomers();
+  }, 1000);
 });
