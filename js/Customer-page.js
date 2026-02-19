@@ -24,7 +24,7 @@ closeBtn.addEventListener('click', () => {
   const tableBody = document.querySelector("#customerTable tbody");
 
   function loadQueue() {
-    fetch("http://192.168.0.110:3000/customers")
+    fetch("http://laundrybackend-production-3c03.up.railway.app/customers")
       .then(res => res.json())
       .then(data => {
         tableBody.innerHTML = "";

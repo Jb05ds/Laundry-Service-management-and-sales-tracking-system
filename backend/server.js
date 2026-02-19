@@ -55,17 +55,16 @@ app.post("/addCustomer", (req, res) => {
     return res.status(400).json({ message: "Missing fields" });
   }
 
-const sql = `
-INSERT INTO customers 
-(name, email, service, price, kilo, created_at, status)
-VALUES (?, ?, ?, ?, ?, NOW(), 'Pending')
-`;
-
-
+  const sql = `
+    INSERT INTO customers 
+    (name, email, service, price, kilo)
+    VALUES (?, ?, ?, ?, ?)
+  `;
+  
   db.query(sql, [name, email, service, price, kilo], (err, result) => {
     if (err) {
-      console.error(err);
-      return res.status(500).json({ message: "Insert failed" });
+      console.error("❌ Insert error:", err);
+      return res.status(500).json({ message: "Insert failed", error: err.message });
     }
     res.json({ message: "Customer added", id: result.insertId });
   });
