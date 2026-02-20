@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const searchInput = document.getElementById("searchInput");
 
-  const salesLink = document.getElementById("salesLink");
   const recordsLink = document.getElementById("recordsLink");
   const salesSection = document.getElementById("monthlySales");
 
@@ -84,14 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const sampleData = [
-    { id: 1, name: "John", service: "Wash", kilo: 5, price: 250, contact: "09736881137", status: "Done", time: "2026-01-10" },
-    { id: 2, name: "Evan", service: "Dry Clean", kilo: 3, price: 300, contact: "09229844110", status: "Done", time: "2026-02-15" },
-    { id: 3, name: "Zeus", service: "Iron", kilo: 2, price: 150, contact: "09912779934", status: "Done", time: "2026-03-20" },
-    { id: 4, name: "Patrick", service: "Wash", kilo: 4, price: 200, contact: "09700437593", status: "Done", time: "2026-02-05" },
-    { id: 5, name: "Anna", service: "Wash", kilo: 3, price: 180, contact: "09833473261", status: "Done", time: "2026-07-12" },
-    { id: 6, name: "Joy", service: "Iron", kilo: 1, price: 100, contact: "09476199162", status: "Done", time: "2026-07-20" },
-    { id: 7, name: "Bruno", service: "Dry Clean", kilo: 2, price: 250, contact: "09389922843", status: "Done", time: "2026-06-18" },
-    { id: 8, name: "Cherry", service: "Wash", kilo: 5, price: 300, contact: "09331982335", status: "Done", time: "2026-05-08" }
+    { id: 1, name: "John", service: "Wash", kilo: 5, price: 5000, contact: "09736881137", status: "Done", time: "2026-01-10" },
+    { id: 2, name: "Evan", service: "Dry Clean", kilo: 3, price: 500, contact: "09229844110", status: "Done", time: "2026-02-15" },
+    { id: 3, name: "Zeus", service: "Iron", kilo: 2, price: 1500, contact: "09912779934", status: "Done", time: "2026-03-20" },
+    { id: 4, name: "Patrick", service: "Wash", kilo: 4, price: 5600, contact: "09700437593", status: "Done", time: "2026-02-05" },
+    { id: 5, name: "Anna", service: "Wash", kilo: 3, price: 3000, contact: "09833473261", status: "Done", time: "2026-07-12" },
+    { id: 6, name: "Joy", service: "Iron", kilo: 1, price: 1000, contact: "09476199162", status: "Done", time: "2026-07-20" },
+    { id: 7, name: "Bruno", service: "Dry Clean", kilo: 2, price: 2000, contact: "09389922843", status: "Done", time: "2026-06-18" },
+    { id: 8, name: "Cherry", service: "Wash", kilo: 5, price: 3500, contact: "09331982335", status: "Done", time: "2026-05-08" }
   ];
 
   const monthlySales = {};
@@ -101,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     monthlySales[month] = (monthlySales[month] || 0) + order.price;
   });
 
-  const monthLabels = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const monthLabels = ["Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct"];
   const salesData = monthLabels.map((_, index) => monthlySales[index] || 0);
 
   new Chart(ctx, {
@@ -253,14 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  salesLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    salesSection.style.display = "block";
-    recordsSection.style.display = "block";
-
-    document.querySelector("#CustomerRecord").style.display = "none";
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
 
     function updateStatus(id, status) {
     fetch(`https://laundrybackend-production-3c03.up.railway.app/updateStatus/${id}`, {
@@ -277,10 +268,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 });
 const modalLogin = document.getElementById("modalLogin");
-const openLogin = document.getElementById("salesLink");
 const loginBtn = document.querySelector(".login");
 const cancelBtn = document.querySelector(".cancel");
 const passwordInput = document.getElementById("adminPassword");
+const salesLink = document.getElementById("salesLink");
 
 function clearloginInputs()  {
   passwordInput.value = "";
@@ -295,6 +286,14 @@ cancelBtn.onclick =()=>{
   clearloginInputs();
   modalLogin.style.display = "none";
 };
+  salesLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    salesSection.style.display = "block";
+    recordsSection.style.display = "block";
+
+    document.querySelector("#CustomerRecord").style.display = "none";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
 const pass = "admin123";
 loginBtn.addEventListener("click", function(e) {
