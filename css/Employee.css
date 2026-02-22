@@ -87,10 +87,11 @@ header {
       position: relative;
       padding: 8px 0;
       transition: all 0.3s;
-      text-decoration: none;
     }
 
-    nav a
+    nav a {
+      text-decoration: none;
+    }
 
     nav button:hover {
       color: #6d28d9;
@@ -284,9 +285,7 @@ header {
   background-color: rgba(172, 171, 171, 0.411);
 }
 
-/* ================= TABLE FIXED GRADIENT VERSION ================= */
 
-/* CONTAINER */
 .table-container {
   max-height: calc(8 * 50px + 40px);
   overflow-y: auto;
@@ -297,7 +296,6 @@ header {
   position: relative;;
 }
 
-/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -305,7 +303,6 @@ table {
   font-family: "Segoe UI", sans-serif;
 }
 
-/* HEADER ROW — GRADIENT ACROSS FULL WIDTH */
 thead tr {
   background: linear-gradient(
     90deg,
@@ -320,7 +317,6 @@ thead tr {
   z-index: 5;
 }
 
-/* HEADER CELLS */
 th {
   background: transparent;
   color: #4b2e5e;
@@ -344,14 +340,13 @@ th, td {
   margin-top: 10px; 
 
 }
-/* BODY CELLS */
+
 td {
   padding: 12px;
   border-bottom: 1px solid #eddcf5;
   transition: all 0.25s ease;
 }
 
-/* ROW BACKGROUNDS */
 tbody tr:nth-child(odd) {
   background: #f6effb;
 }
@@ -362,12 +357,11 @@ tbody tr:nth-child(even) {
 
 
 
-/* STATUS BADGES */
 .status.pending { background: #f6e6ff; color: #7b3fa0; }
 .status.ready   { background: #e2d4ff; color: #4b2e83; }
 .status.claimed { background: #d6c3ff; color: #2e1a66; }
 
-/* BUTTONS */
+
 .btn-done {
   background: linear-gradient(135deg, #9bd8b3, #62c692);
   color: #134e36;
@@ -388,7 +382,6 @@ tbody tr:nth-child(even) {
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
-/* SCROLLBAR */
 .table-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -416,19 +409,16 @@ tbody tr:nth-child(even) {
   height: 400px;
 }
 
-/* Smooth transitions for table elements */
 table, th, td {
   transition: all 0.25s ease;
 }
 
 
 
-/* Zebra stripes */
 tbody tr:nth-child(even) td {
   background: #fbf8fd;
 }
 
-/* Button hover animations */
 .btn-done:hover {
   background: #24913f;
   transform: translateY(-2px);
@@ -441,13 +431,11 @@ tbody tr:nth-child(even) td {
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
-/* Status pill hover */
 .status:hover {
   transform: scale(1.05);
   filter: brightness(1.05);
 }
 
-/* Scrollbar styling (optional but premium feel) */
 .table-container::-webkit-scrollbar {
   width: 8px;
 }
