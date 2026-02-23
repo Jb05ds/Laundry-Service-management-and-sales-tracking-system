@@ -159,12 +159,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const row = document.createElement("tr");
 
           row.innerHTML = `
+
             <td>${c.name}</td>
             <td>${c.service}</td>
             <td>${c.kilo}</td>
             <td>₱ ${c.price}</td>
             <td>${c.email}</td>
+            
             <td>
+            
               <select class="status-select status">
                 <option class="status pending" value="Pending" ${c.status === "Pending" ? "selected" : ""}>Pending</option>
                 <option class="status ready" value="Ready to pick up" ${c.status === "Ready to pick up" ? "selected" : ""}>Ready to pick up</option>

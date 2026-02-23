@@ -355,12 +355,57 @@ tbody tr:nth-child(even) {
   background: #fbf7fe;
 }
 
+.status-select {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding-left: 30px;
+  position: relative;
+  text-align: center;
+}
 
+/* dot */
+.status-select::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
 
-.status.pending { background: #f6e6ff; color: #7b3fa0; }
-.status.ready   { background: #e2d4ff; color: #4b2e83; }
-.status.claimed { background: #d6c3ff; color: #2e1a66; }
+/* Pending */
+.status-select.pending {
+  background: #fde9c6;
+  color: #a87400;
+}
+.status-select.pending::before {
+  background: #a87400;
+}
 
+/* Ready */
+.status-select.ready {
+  background: #d7f3e2;
+  color: #157347;
+}
+.status-select.ready::before {
+  background: #157347;
+}
+
+.status-select.claimed {
+  background: #e2e3e5;
+  color: #383d41;
+}
+.status-select.claimed::before {
+  background: #383d41;
+}
 
 .btn-done {
   background: linear-gradient(135deg, #9bd8b3, #62c692);
