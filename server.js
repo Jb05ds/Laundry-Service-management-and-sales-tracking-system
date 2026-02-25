@@ -24,16 +24,12 @@ const db = mysql.createPool({
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("Laundry Service API is running ✅");
-});
+const path = require('path');
 
-const path = require("path");
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get("/customers", (req, res) => {
