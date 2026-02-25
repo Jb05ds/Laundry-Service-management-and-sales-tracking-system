@@ -24,6 +24,10 @@ const db = mysql.createPool({
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Laundry Service API is running ✅");
+});
+
 app.get("/customers", (req, res) => {
   const sql = `
     SELECT *
