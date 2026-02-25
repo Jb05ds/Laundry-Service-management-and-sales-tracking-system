@@ -24,8 +24,6 @@ const db = mysql.createPool({
   }
 });
 
-
-
 app.get("/customers", (req, res) => {
   const sql = `
     SELECT *
