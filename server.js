@@ -27,12 +27,12 @@ const db = mysql.createPool({
   }
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'Login.html'));
-});
-
 app.get('/employee', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Employee.html'));
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Login.html'));
 });
 
 app.get('/customers', (req, res) => {
