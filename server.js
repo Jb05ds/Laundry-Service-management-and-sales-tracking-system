@@ -5,6 +5,9 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(cors());
 app.use(express.json());
 
@@ -24,12 +27,16 @@ const db = mysql.createPool({
   }
 });
 
-const path = require('path');
-
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Login.html'));
+});
+
+app.get('/employee', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Employee.html'));
+});
+
+app.get('/customers', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Costumer-page.html'));
 });
 
 app.get("/customers", (req, res) => {
